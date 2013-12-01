@@ -30,8 +30,13 @@ max-height: 124px;
 }
 
 #headersize {
-max-width: 640px;
-max-height: 270px;
+max-width: 362px;
+max-height: 136px;
+}
+
+#bottomsize {
+max-width: 362px;
+max-height: 33px;
 }
 
 #videoIMGsize {
