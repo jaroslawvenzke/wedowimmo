@@ -8,19 +8,19 @@ HTML, BODY {
 BODY {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
-	color: 		#7b7c7e;
+	color: 		#000000;
 }
 
 #menusize {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 10px;
-	color: 		#7b7c7e;
+	color: 		#000000;
 }
 
 h1 {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 20px;
-	color: 		#8c0d68;
+	color: 		#005fa7;
 	font-weight: bold;
 }
 
@@ -97,4 +97,4 @@ a.newSubmitButtonBack:hover{
   text-align:left;
 }
 
-A { color: #8c0d68; border: 0px; -moz-outline: none; }
+A { color: #000000; border: 0px; -moz-outline: none; }
