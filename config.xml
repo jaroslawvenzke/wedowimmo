@@ -37,7 +37,7 @@
         permission on your app, which PhoneGap requires.
     -->
     <!--<preference name="permissions" value="none"/>-->
-		<preference name="android-minSdkVersion" value="7"/>
+		<preference name="android-minSdkVersion" value="14"/>
 		<preference name="ios-statusbarstyle" value="black-opaque" />
 
     <!-- Customize your app and platform with the preference element. -->
