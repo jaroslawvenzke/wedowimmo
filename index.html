@@ -1,55 +1,54 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <title>WEDOW IMMOBILIEN - Home</title>
-	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8" src="childbrowser.js"></script>
-	<link href='style.css' type='text/css' rel='stylesheet' media='all'>	
+    <script type="text/javascript" charset="utf-8">
+ 
+    // Wait for PhoneGap to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+ 
+    // PhoneGap is ready
+    //
+	function onDeviceReady() {
+		showPage(true);
+    }
+	
+		
+		function closed() {
+        /*console.log("The JS got a close event");*/
+		if (navigator.app) {
+			navigator.app.exitApp();
+		}
+		else if (navigator.device) {
+			navigator.device.exitApp();
+			}
+		}
+	
+		function locationChanged(newurl) {
+        /*console.log("The JS got this url = " + newurl);*/
+		}
+		
+		function showPage(locbar) {
+        window.plugins.childBrowser.onLocationChange = locationChanged;
+        window.plugins.childBrowser.onClose = closed;
+        window.plugins.childBrowser.showWebPage("http://www.jaroslawvenzke.de/kundenprojekte/wedowimmo/menue.html", { 
+		showLocationBar: locbar, 
+		showNavigationBar: true, 
+		showAddress: false 
+		});
+    }
+	
+	
+    
+    </script>
   </head>
-  
-  <body bgcolor="#fec20a">
-  
-<br/>
-<br/>
-
-<table width="100%" align="center" bgcolor="#ffffff" cellpadding="0" cellspacing="0">
-<tr>
-	<td colspan="3" align="center" valign="bottom" bgcolor="fec20a"><img src="img/head.png" width="100%" id="headersize"></td>
-</tr>
-<tr>
-	<td colspan="3" align="center" valign="top" bgcolor="ffffff"><img src="img/hr.png" width="100%"></td>
-</tr>
-<tr>
-<td colspan="3" align="center"  bgcolor="#ffffff" width="100%">
-<table width="100%" align="center" bgcolor="#ffffff" cellpadding="5" cellspacing="5">
-<tr>
-	<td width="30%" align="center"><a href="immobilien.html"><img src="img/immobilien.png" id="menuebuttons" width="100%"/></a><br><span class="menusize">Immobilien</span></td>
-	<td width="30%" align="center"><a href="ueberuns.html"><img src="img/uns.png" id="menuebuttons" width="100%"></a><br><span class="menusize">&Uuml;ber uns</span></td>
-	<td width="30%" align="center"><a href="tel:492406668699"><img src="img/call.png" id="menuebuttons" width="100%"></a><br><span class="menusize">Anrufen</span></td>
-</tr>
-<tr>
-	<td width="30%" align="center"><a href="http://touch.facebook.com/wedow.immobilien" target="_blank"><img src="img/fb.png" id="menuebuttons" width="100%"></a><br><span class="menusize">Facebook</span></td>
-	<td width="30%" align="center"><a href="https://twitter.com/WedowImmobilien" target="_blank"><img src="img/tw.png" id="menuebuttons" width="100%"/></a><br/><span class="menusize">Twitter</span></td>
-	<td width="30%" align="center"><a href="video_frame.html"><img src="img/video.png" id="menuebuttons" width="100%"></a><br><span class="menusize">Videos</span></td>
-</tr>
-<tr>
-	<td width="30%" align="center"><a href="impressum.html"><img src="img/kontakt.png" id="menuebuttons" width="100%"></a><br><span class="menusize">Impressum</span></td>
-	<td width="30%" align="center"><a href="kontakt.html"><img src="img/email.png" id="menuebuttons" width="100%"></a><br><span class="menusize">Kontakt</span></td>
-	<td width="30%" align="center"><a href="map.html"><img src="img/map.png" id="menuebuttons" width="100%"></a><br><span class="menusize">Map</span></td>
-</tr>
-</table></td>
-</tr>
-
-</table>
-
-<br/>
-<br/>
-
-<table width="100%" align="center">
-<tr>
-	<td align="center"><span class="menusize"><a href="http://www.wedowimmobilien.de" target="_self"><b>www.wedowimmobilien.de</b></a></span></td>
-</tr>
-</table>
+  <body onload="onLoad()">
   </body>
 </html>
