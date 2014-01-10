@@ -12,16 +12,13 @@
     //
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
-		showPage(true);
     }
  
     // PhoneGap is ready
     //
-	function onDeviceReady() {
-		
-    }
-		
-		function closed() {
+	function onDeviceReady() {	
+    
+	function closed() {
         /*console.log("The JS got a close event");*/
 		if (navigator.app) {
 			navigator.app.exitApp();
@@ -45,7 +42,9 @@
 		});
     }
 	
+	showPage(true);
 	
+	}	
     
     </script>
   </head>
