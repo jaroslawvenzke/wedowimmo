@@ -21,11 +21,11 @@
          ref.addEventListener('exit', function() { 
 			if (navigator.app) {
 				if (confirm("App beenden?")) navigator.app.exitApp();
-				/*navigator.app.exitApp();*/
+				else {onLoad()}
 			}
 			else if (navigator.device) {
 				if (confirm("App beenden?")) navigator.device.exitApp();
-				/*navigator.device.exitApp();*/
+				else {onLoad()}
 				}
 		 });
     }
