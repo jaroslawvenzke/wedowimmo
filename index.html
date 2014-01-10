@@ -10,16 +10,16 @@
  
     // Wait for PhoneGap to load
     //
-    /*function onLoad() {
+    function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
     }
  
     // PhoneGap is ready
     //
-	function onDeviceReady() {	
-	}	*/
-	
-	function closed() {
+	if (onDeviceReady) {
+	function onDeviceReady() {
+
+		function closed() {
 			/*console.log("The JS got a close event");*/
 			if (navigator.app) {
 				if (confirm("App beenden?")) navigator.app.exitApp();
@@ -30,28 +30,41 @@
 				/*navigator.device.exitApp();*/
 				}
 			}
-		
-			function locationChanged(newurl) {
-			/*console.log("The JS got this url = " + newurl);*/
-			}
-			
-			function showPage(locbar) {
-			window.plugins.childBrowser.onLocationChange = locationChanged;
-			window.plugins.childBrowser.onClose = closed;
-			window.plugins.childBrowser.showWebPage("http://www.jaroslawvenzke.de/kundenprojekte/wedowimmo/menue.html", { 
-			showLocationBar: locbar, 
-			showNavigationBar: true, 
-			showAddress: false 
-			});
+	
+		function locationChanged(newurl) {
+        /*console.log("The JS got this url = " + newurl);*/
 		}
 		
-		showPage(true);
-    
+		function showPage(locbar) {
+        window.plugins.childBrowser.onLocationChange = locationChanged;
+        window.plugins.childBrowser.onClose = closed;
+        window.plugins.childBrowser.showWebPage("http://www.jaroslawvenzke.de/kundenprojekte/wedowimmo/menue.html", { 
+		showLocationBar: locbar, 
+		showNavigationBar: true, 
+		showAddress: false 
+		});
+    }
+	
+	showPage(true);
+	
+	}
+	}
+	else {
+	if (navigator.app) {
+				if (confirm("App ist down!")) navigator.app.exitApp();
+				/*navigator.app.exitApp();*/
+			}
+			else if (navigator.device) {
+				if (confirm("App is down!")) navigator.device.exitApp();
+				/*navigator.device.exitApp();*/
+				}
+			}
+
+	
     </script>
   </head>
   <body onload="onLoad()">
-  
-	<table width="100%" align="center" cellpadding="0" cellspacing="0">
+    <table width="100%" align="center" cellpadding="0" cellspacing="0">
 	<tr>
 		<td>&nbsp;</td>
 	</tr>
@@ -59,6 +72,5 @@
 		<td colspan="3" align="center" valign="bottom"><img src="res/icon/ios/icon-152.png"></td>
 	</tr>
 	</table>
-  
   </body>
 </html>
