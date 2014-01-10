@@ -61,7 +61,9 @@
         A list of available plugins are available at https://build.phonegap.com/docs/plugins
     -->
 	
-	<gap:plugin name="com.phonegap.plugins.childbrowser" />
+	<plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
+	<plugin name="InAppBrowser" value="CDVInAppBrowser" />
+	<plugin name="InAppBrowser" />
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />

@@ -5,7 +5,6 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <title>WEDOW IMMOBILIEN - Home</title>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8" src="childbrowser.js"></script>
     <script type="text/javascript" charset="utf-8">
  
     // Wait for PhoneGap to load
@@ -16,10 +15,10 @@
  
     // PhoneGap is ready
     //
+		
 	function onDeviceReady() {
-
-		function closed() {
-			/*console.log("The JS got a close event");*/
+         var ref = window.open('http://www.jaroslawvenzke.de/kundenprojekte/wedowimmo/menue.html', '_blank', 'location=yes');
+         ref.addEventListener('exit', function() { 
 			if (navigator.app) {
 				if (confirm("App beenden?")) navigator.app.exitApp();
 				/*navigator.app.exitApp();*/
@@ -28,25 +27,9 @@
 				if (confirm("App beenden?")) navigator.device.exitApp();
 				/*navigator.device.exitApp();*/
 				}
-			}
-	
-		function locationChanged(newurl) {
-        /*console.log("The JS got this url = " + newurl);*/
-		}
-		
-		function showPage(locbar) {
-        window.plugins.childBrowser.onLocationChange = locationChanged;
-        window.plugins.childBrowser.onClose = closed;
-        window.plugins.childBrowser.showWebPage("http://www.jaroslawvenzke.de/kundenprojekte/wedowimmo/menue.html", { 
-		showLocationBar: locbar, 
-		showNavigationBar: true, 
-		showAddress: false 
-		});
+		 });
     }
 	
-	showPage(true);
-	
-	}	
     </script>
   </head>
   <body onload="onLoad()">
