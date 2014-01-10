@@ -16,7 +16,6 @@
  
     // PhoneGap is ready
     //
-	if (onDeviceReady) {
 	function onDeviceReady() {
 
 		function closed() {
@@ -47,20 +46,7 @@
 	
 	showPage(true);
 	
-	}
-	}
-	else {
-	if (navigator.app) {
-				if (confirm("App ist down!")) navigator.app.exitApp();
-				/*navigator.app.exitApp();*/
-			}
-			else if (navigator.device) {
-				if (confirm("App is down!")) navigator.device.exitApp();
-				/*navigator.device.exitApp();*/
-				}
-			}
-
-	
+	}	
     </script>
   </head>
   <body onload="onLoad()">
