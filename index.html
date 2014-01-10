@@ -21,10 +21,12 @@
 		function closed() {
 			/*console.log("The JS got a close event");*/
 			if (navigator.app) {
-				navigator.app.exitApp();
+				if (confirm("App beenden?")) navigator.app.exitApp();
+				/*navigator.app.exitApp();*/
 			}
 			else if (navigator.device) {
-				navigator.device.exitApp();
+				if (confirm("App beenden?")) navigator.device.exitApp();
+				/*navigator.device.exitApp();*/
 				}
 			}
 		
@@ -49,5 +51,15 @@
     </script>
   </head>
   <body onload="onLoad()">
+  
+	<table width="100%" align="center" bgcolor="#ffffff" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan="3" align="center" valign="bottom" bgcolor="fec20a"><img src="res/icon/ios/icon-152.png"></td>
+	</tr>
+	</table>
+  
   </body>
 </html>
