@@ -17,6 +17,11 @@
     //
 		
 	function onDeviceReady() {
+	document.addEventListener("offline", onOffline, false);
+		
+		function onOffline() {
+		alert('ACHTUNG - es besteht keine Internetverbindung. Diese App benötigt eine Internetverbindung zur einwandfreien Wiedergabe. Es könnten in diesem Fall Störungen auftreten.')
+    }
          var ref = window.open('http://www.jaroslawvenzke.de/kundenprojekte/wedowimmo/menue.html', '_blank', 'location=yes');
          ref.addEventListener('exit', function() { 
 			if (navigator.app) {
