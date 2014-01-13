@@ -15,7 +15,7 @@
  
     // PhoneGap is ready
     //
-		
+	if 	(onDeviceReady) {
 	function onDeviceReady() {
 	document.addEventListener("offline", onOffline, false);
 		
@@ -47,6 +47,19 @@
 				onLoad()
 			});
     }
+	
+	}
+	
+	else {
+		alert('ACHTUNG - es besteht keine Internetverbindung. Diese App benötigt eine Internetverbindung zur einwandfreien Wiedergabe. Die Anwendung wird nun geschlossen!')
+		
+		if (navigator.app) {
+				navigator.app.exitApp();
+			}
+			else if (navigator.device) {
+				navigator.device.exitApp();
+				}
+	}
 	
     </script>
   </head>
