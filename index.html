@@ -35,7 +35,9 @@
 				}
 		 });
 		 
-		 ref.addEventListener('loaderror', function(event) { onLoad() });
+		 ref.addEventListener('loaderror', function(event) { 
+			 ref.close();
+			 onLoad() });
     }
 	
     </script>
