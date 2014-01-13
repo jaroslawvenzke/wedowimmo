@@ -1,76 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <title>WEDOW IMMOBILIEN - Home</title>
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
- 
-    // Wait for PhoneGap to load
-    //
-    function onLoad() {
-        document.addEventListener("deviceready", onDeviceReady, false);
-    }
- 
-    // PhoneGap is ready
-    //
-	if 	(onDeviceReady) {
-	function onDeviceReady() {
-	document.addEventListener("offline", onOffline, false);
-		
-		function onOffline() {
-		alert('ACHTUNG - es besteht keine Internetverbindung. Diese App benötigt eine Internetverbindung zur einwandfreien Wiedergabe. Die Anwendung wird nun geschlossen!')
-		
-		if (navigator.app) {
-				navigator.app.exitApp();
-			}
-			else if (navigator.device) {
-				navigator.device.exitApp();
-				}
-		
-    }
-         var ref = window.open('http://www.jaroslawvenzke.de/kundenprojekte/wedowimmo/menue.html', '_blank', 'location=yes');
-         
-		 ref.addEventListener('exit', function() { 
-			if (navigator.app) {
-				if (confirm("App beenden?")) navigator.app.exitApp();
-				else {onLoad()}
-			}
-			else if (navigator.device) {
-				if (confirm("App beenden?")) navigator.device.exitApp();
-				else {onLoad()}
-				}
-		 });
-		 
-		 ref.addEventListener('loaderror', function(event) { 	
-				onLoad()
-			});
-    }
-	
-	}
-	
-	else {
-		alert('ACHTUNG - es besteht keine Internetverbindung. Diese App benötigt eine Internetverbindung zur einwandfreien Wiedergabe. Die Anwendung wird nun geschlossen!')
-		
-		if (navigator.app) {
-				navigator.app.exitApp();
-			}
-			else if (navigator.device) {
-				navigator.device.exitApp();
-				}
-	}
-	
-    </script>
-  </head>
-  <body onload="onLoad()">
-    <table width="100%" align="center" cellpadding="0" cellspacing="0">
-	<tr>
-		<td>&nbsp;</td>
-	</tr>
-	<tr>
-		<td colspan="3" align="center" valign="bottom"><img src="res/icon/ios/icon-152.png"></td>
-	</tr>
-	</table>
+   <title>tittle</title>
+   <script>
+     window.location='./main.html';
+   </script>
+  <body>
   </body>
 </html>
