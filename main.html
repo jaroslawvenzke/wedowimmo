@@ -16,24 +16,15 @@
  
     // PhoneGap is ready
     //
-	if 	(onDeviceReady) {
+		
 	function onDeviceReady() {
 	document.addEventListener("offline", onOffline, false);
 		
 		function onOffline() {
-		alert('ACHTUNG - es besteht keine Internetverbindung. Diese App benötigt eine Internetverbindung zur einwandfreien Wiedergabe. Die Anwendung wird nun geschlossen!')
-		
-		if (navigator.app) {
-				navigator.app.exitApp();
-			}
-			else if (navigator.device) {
-				navigator.device.exitApp();
-				}
-		
+		alert('ACHTUNG - es besteht keine Internetverbindung. Diese App benötigt eine Internetverbindung zur einwandfreien Wiedergabe. Es könnten in diesem Fall Störungen auftreten.')
     }
          var ref = window.open('http://www.jaroslawvenzke.de/kundenprojekte/wedowimmo/menue.html', '_blank', 'location=yes');
-         
-		 ref.addEventListener('exit', function() { 
+         ref.addEventListener('exit', function() { 
 			if (navigator.app) {
 				if (confirm("App beenden?")) navigator.app.exitApp();
 				else {onLoad()}
@@ -48,19 +39,6 @@
 				onLoad()
 			});
     }
-	
-	}
-	
-	else {
-		alert('ACHTUNG - es besteht keine Internetverbindung. Diese App benötigt eine Internetverbindung zur einwandfreien Wiedergabe. Die Anwendung wird nun geschlossen!')
-		
-		if (navigator.app) {
-				navigator.app.exitApp();
-			}
-			else if (navigator.device) {
-				navigator.device.exitApp();
-				}
-	}
 	
     </script>
   </head>
