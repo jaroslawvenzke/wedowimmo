@@ -26,18 +26,22 @@
          var ref = window.open('http://www.jaroslawvenzke.de/kundenprojekte/wedowimmo/menue.html', '_blank', 'location=yes');
          ref.addEventListener('exit', function() { 
 			if (navigator.app) {
-				if (confirm("App beenden?")) navigator.app.exitApp();
-				else {onLoad()}
+				if (confirm("App beenden?")) {
+					navigator.app.exitApp();
+				}
+				else {
+					onLoad();
+				}
 			}
 			else if (navigator.device) {
-				if (confirm("App beenden?")) navigator.device.exitApp();
-				else {onLoad()}
+				if (confirm("App beenden?")) {
+					navigator.device.exitApp();
+				}
+				else {
+					onLoad();
+				}
 				}
 		 });
-		 
-		 ref.addEventListener('loaderror', function(event) { 	
-				onLoad()
-			});
     }
 	
     </script>
